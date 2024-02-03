@@ -10,22 +10,49 @@ html, body {
     width: 100%;
 }
 body {
+    overflow: hidden;
+}
+
+#start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: #fff;
+    border: 3px solid rgb(46, 8, 8);
+    height: 50px;
+    width: 100px;
+    top: 1;
+    position: absolute;
+    border-radius: 10px;
+    background-color: #b11b1b;
+
+}
+
+#start:hover {
+    cursor: pointer;
+    background-color: black;
+}
+
+body {
     height: 100%;
     width: 100%;
     background-color: rgb(14, 235, 161);
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 #structure {
-    height: 85%;
+    height: 75%;
     width: 90%;
     background-color: aqua;
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid #dadada;
 }
+
 #head {
     height: 100px;
     width: 100%;
@@ -35,12 +62,14 @@ body {
     justify-content: space-around;
     border-bottom: 1px solid #dadada;
 }
+
 .elem {
     display: flex;
     gap: 10px;
     justify-content: center;
     align-items: center;
 }
+
 .box {
     height: 40px;
     width: 40px;
@@ -53,6 +82,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 #bottom {
     width: 100%;
     height: calc(100% - 100px);
@@ -61,10 +91,11 @@ body {
     color: #fff;
     display: flex;
     justify-content: center;
-    align-items: center ;
+    align-items: center;
     gap: 10px;
     flex-wrap: wrap;
 }
+
 .bubble {
     height: 50px;
     width: 50px;
@@ -74,20 +105,18 @@ body {
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    
+
 
 }
+
 .bubble:hover {
     cursor: pointer;
     background-color: greenyellow;
 }
 
 #rights {
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-end;
-    align-self: self-end;
     width: 0.3%;
-    text-align:calc(100% - 99%);
     color: #fff;
+    bottom: 0;
+    position: absolute;
 }

@@ -1,24 +1,24 @@
-var rn;
-var score = 0;
+let rn;
+let score = 0;
 
 
 function golaBanao() {
-    var clit = "";
+    let clit = "";
 
-    for (var i = 1; i < 177; i++) {
-        var rand = Math.ceil(Math.random() * 10);
+    for (let i = 1; i < 151; i++) {
+        let rand = Math.ceil(Math.random() * 10);
         clit += `<div class="bubble">${rand}</div>`
     }
-    var a = document.querySelector("#bottom");
+    let a = document.querySelector("#bottom");
     a.innerHTML = clit;
 }
 
 
 function timerChalao() {
-    var a = document.querySelector("#time");
-    var timerset = 60;
+    let a = document.querySelector("#time");
+    let timerset = 60;
 
-    var set = setInterval(function () {
+    let set = setInterval(function () {
         if (timerset > 0) {
             timerset--;
             a.textContent = timerset;
@@ -27,36 +27,51 @@ function timerChalao() {
             clearInterval(set);
             document.querySelector("#bottom").innerHTML = `<h1> Game Over </h1>`;
 
+
         }
     }, 1000);
 }
 
 function generateTarget() {
-    var a = document.querySelector("#tar");
+    let a = document.querySelector("#tar");
     rn = Math.ceil(Math.random() * 10);
     a.textContent = rn;
 
 }
 
 function scoreBadega() {
-    var point = document.querySelector("#score");
+    let point = document.querySelector("#score");
     score += 15;
     point.textContent = score;
 }
 
-golaBanao();
-timerChalao();
-generateTarget();
+// golaBanao();
+// timerChalao();
+// generateTarget();
 
-var bot = document.querySelector("#bottom");
+let bot = document.querySelector("#bottom");
 
 bot.addEventListener("click", function (dets) {
-    var val = (Number(dets.target.textContent));
+    let val = (Number(dets.target.textContent));
     if (val === rn) {
         scoreBadega();
         golaBanao();
         generateTarget();
     }
-
-
 });
+
+
+
+    let start = document.querySelector("#start");
+    start.addEventListener("click", function () {
+        start.style.visibility = "hidden";
+        golaBanao();
+        timerChalao();
+        generateTarget();
+        setTimeout(function () {
+            start.style.visibility = "initial";
+        }, 61000);
+
+    });
+
+
